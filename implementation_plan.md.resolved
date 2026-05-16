@@ -1,0 +1,78 @@
+# Altarstate E-commerce Website Specification & Implementation Plan
+
+This document outlines the architectural and technical specification for the Altarstate e-commerce platform, starting with the initial premium landing page phase.
+
+## Project Overview
+Altarstate is a new clothing business selling premium apparel (hoodies, t-shirts, etc.). The goal is to build a scalable, modern React-based web application. The initial phase focuses on a minimal, premium landing page featuring the brand logo perfectly centered on a black background. Future phases will introduce full e-commerce capabilities including product listings, details, cart, checkout, and auth.
+
+## User Review Required
+> [!IMPORTANT]
+> Please review this specification and architectural plan. Once approved, I will proceed to initialize the React (Vite) project, set up the folder structure, and implement the initial landing page.
+
+## User Flows
+1. **Initial Phase (Landing):** User visits the root URL and sees a full-screen, responsive, minimalistic black landing page with the Altarstate logo perfectly centered.
+2. **Future Phase (Shopping):**
+   - User navigates from Landing to Shop (Product Listing Page).
+   - User filters/sorts apparel (hoodies, t-shirts).
+   - User clicks a product to view the Product Detail Page (images, sizes, add to cart).
+   - User opens the sliding Cart and proceeds to Checkout.
+
+## Page Structure
+- **`/` (Landing Page):** Minimalist black page with centered logo.
+- **`/shop` (Products Page):** Grid of available apparel.
+- **`/shop/:id` (Product Detail):** Specific item details.
+- **`/cart` (Cart/Bag):** Order summary.
+- **`/checkout` (Checkout):** Payment and shipping flow.
+
+## Component Breakdown
+To maintain a clean and scalable codebase, UI elements will be broken down into reusable components:
+- **Atoms:** `Button`, `Typography`, `Logo`, `Spinner`
+- **Molecules:** `ProductCard`, `NavLinks`, `CartItem`
+- **Organisms:** `Header` (Navigation), `Footer`, `HeroSection`, `ProductGrid`
+- **Templates:** `MainLayout`
+
+## Folder Structure
+We will use a feature-based / common layered architecture suitable for modern React applications:
+```
+src/
+├── assets/          # Static files (logo, fonts, images)
+├── components/      # Reusable UI components (Button, Header, Footer)
+├── layouts/         # Layout wrappers (e.g., MainLayout with Header/Footer)
+├── pages/           # Route-level components (Landing, Products, ProductDetail)
+├── styles/          # Global styles, CSS variables, theme configuration
+├── utils/           # Helper functions, constants, formatters
+├── services/        # API calls, mock data functions
+├── store/           # Global state (Zustand or Context API)
+├── hooks/           # Custom React hooks (e.g., useCart)
+├── App.jsx          # Main application component & Router setup
+└── main.jsx         # React entry point
+```
+
+## Architectural Decisions & Scalability
+- **Framework:** React + Vite for fast development and optimized production builds.
+- **Styling:** Vanilla CSS with CSS variables (`styles/theme.css`) for theming and clean scoping. This ensures maximum flexibility without heavy dependencies, adhering to the requirement for clean, maintainable styles.
+- **Routing:** React Router DOM for handling navigation between pages.
+- **State Management:** React Context (for simple auth/theme) and Zustand (for cart state) as the app grows.
+- **Responsive Design:** Mobile-first approach using CSS media queries.
+- **Scalability:** By keeping layouts separate from pages, and UI components separate from business logic (services/hooks), the application can easily scale to include hundreds of components and complex e-commerce integrations (like Shopify Storefront API or a custom backend) in the future.
+
+## Proposed Changes
+### [NEW] `implementation_plan.md`
+This specification document.
+
+### Setup Steps (Pending Approval)
+1. Run `npx create-vite@latest ./ --template react` in the workspace directory (`d:\projects\altar-state-UI`).
+2. Install necessary dependencies (e.g., `react-router-dom`).
+3. Set up the folder structure as defined above.
+4. Add the provided Altarstate logo to the `assets` folder.
+5. Create global CSS for the black background and premium typography.
+6. Implement the `Landing` page component to perfectly center the logo.
+7. Wrap the app in a basic `MainLayout`.
+
+## Verification Plan
+### Manual Verification
+- Run `npm run dev` and open the local server in the browser.
+- Verify the landing page has a solid black background.
+- Verify the logo is perfectly centered horizontally and vertically.
+- Resize the browser window to test responsiveness on desktop and mobile viewports.
+- Check the visual aesthetics against the provided reference image.

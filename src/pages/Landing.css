@@ -1,0 +1,42 @@
+.landing-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo-wrapper {
+  animation: fadeIn 1.5s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.coming-soon {
+  margin-top: 1.5rem;
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

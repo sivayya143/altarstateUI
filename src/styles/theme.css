@@ -1,9 +1,9 @@
 :root {
   --color-bg: #050505;
   --color-text: #eae6df;
-  
+
   --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  
+
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
@@ -13,15 +13,17 @@
 .theme-black {
   --color-bg: #050505;
   --color-text: #ffffff;
+  --logo-filter: invert(1);
 }
 
 .theme-white {
   --color-bg: #ffffff;
   --color-text: #050505;
+  --logo-filter: none;
 }
 
 .theme-red {
   --color-bg: #e60000;
   --color-text: #ffffff;
+  --logo-filter: none;
 }
-

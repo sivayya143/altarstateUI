@@ -14,16 +14,22 @@
   --color-bg: #050505;
   --color-text: #ffffff;
   --logo-filter: invert(1);
+  --logo-bg: transparent;
+  --logo-text: #ffffff;
 }
 
 .theme-white {
   --color-bg: #ffffff;
   --color-text: #050505;
   --logo-filter: none;
+  --logo-bg: transparent;
+  --logo-text: #050505;
 }
 
 .theme-red {
   --color-bg: #e60000;
-  --color-text: #ffffff;
+  --color-text: #050505;
   --logo-filter: none;
+  --logo-bg: #e60000;
+  --logo-text: #050505;
 }
